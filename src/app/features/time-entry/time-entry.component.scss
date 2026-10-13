@@ -1,0 +1,40 @@
+@use '../../../styles/abstracts/variables' as *;
+
+.time-entry-card {
+  max-width: 50rem; // 500px dank unserer rem-Regel (1rem = 10px)
+  margin: $spacing-lg auto;
+  padding: $spacing-md;
+
+  mat-card-header {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.time-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .time-row {
+    display: flex;
+    gap: $spacing-md;
+
+    mat-form-field {
+      flex: 1;
+    }
+  }
+
+  button {
+    margin-top: $spacing-sm;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+  }
+}

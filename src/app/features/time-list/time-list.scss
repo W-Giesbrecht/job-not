@@ -1,0 +1,34 @@
+@use '../../../styles/abstracts/variables' as *;
+
+.time-list-container {
+  max-width: 50rem;
+  margin: $spacing-lg auto;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: $spacing-md;
+    color: $primary-color;
+  }
+
+  .no-records {
+    font-size: 1.4rem;
+    color: #666;
+    font-style: italic;
+  }
+
+  .record-card {
+    margin-bottom: $spacing-md;
+
+    .details-row {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+      margin-top: $spacing-xs;
+
+      .notes {
+        margin-top: $spacing-xs;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
