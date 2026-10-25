@@ -1,0 +1,97 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+.hero-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  width: 100%;
+  height: 200px;
+  background-color: #8c9096;
+
+  // Kombination aus Lichtreflex und feinen Metall-Streifen
+  background-image: 
+    // Subtiler radialer Schein in der Mitte (Lichtreflexion)
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 60%),
+    // Feine lineare Streifen, die den Metallschliff imitieren
+    repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+    // Linearer Haupt-Farbverlauf für die Tiefe (oben hell, unten dunkler)
+    linear-gradient(135deg, #a6acb5 0%, #70757d 50%, #5a5f66 100%);
+
+  // Zusätzliche Feinarbeit für den 3D-Look (Edelstahl/Alu-Rahmen)
+  border-bottom-left-radius: 50% 50px;
+  border-bottom-right-radius: 50% 50px;
+  border-bottom: 3px solid #4a4f56;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+
+  .logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+
+      /* 1. Metall-Grundfarbe & Verläufe */
+      background: 
+    /* Subtiler Glanz von oben links nach unten rechts */
+        linear-gradient(135deg, rgba(255, 255, 255, 0.15) 20%, rgba(0, 0, 0, 0.4) 120%),
+        /* Feines horizontales Gebürstet-Muster */
+        repeating-linear-gradient(0deg, #2d323b, #2d323b 1px, #22262d 1px, #22262d 2px);
+
+      /* 2. Schatten & feine Glaskante drumherum */
+      box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 50%;
+        animation: neonPulse 2s infinite alternate;
+      }
+    }
+
+    .logo-title {
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      margin: 0;
+      opacity: 0.95;
+    }
+  }
+}
+
+/* Dezent leuchtende Pulsier-Animation */
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.5),
+      0 0 10px rgba(0, 210, 255, 0.1);
+  }
+  100% {
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.5),
+      0 0 25px rgba(255, 140, 0, 0.25),
+      0 0 35px rgba(0, 210, 255, 0.25);
+  }
+}
